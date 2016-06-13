@@ -63,3 +63,4 @@ instance/
 
 # Project files
 project_files/
+static/bower_components
