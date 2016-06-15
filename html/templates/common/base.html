@@ -14,8 +14,9 @@
   <meta name="description" content="{% block meta_description %}{% endblock %}">
   <meta name="author" content="{% block meta_author %}{% endblock %}">
 
-  <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/bootstrap/dist/css/bootstrap.min.css') }}"
-  <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/bootstrap/dist/css/bootstrap-theme.min.css') }}"
+  <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/bootstrap/dist/css/bootstrap-theme.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
 
   
   {% block css %}
@@ -26,9 +27,9 @@
 
 </head>
 
-<body>
+<body class="background">
 {% block body %}
-  
+  <div class="container-fluid funky-background"> 
   {% block header %}
     {% include "common/partials/header.html" %}
   {% endblock %}
@@ -39,6 +40,7 @@
   {% block footer %}
     {% include "common/partials/footer.html" %}
   {% endblock %}
+  </div>
   
   
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
