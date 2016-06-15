@@ -3,7 +3,7 @@
 {% block content %}
 <div class="row">
   {% for image in images %}
-  <img class="picture" src="{{ url_for('static', filename=('img/work/thmb/' + image.filename))  }}" data-alt-image="{{ url_for('static', filename=('img/work/' + image.filename)) }}">
+  <img class="picture" src="{{ url_for('static', filename=('img/workinprogress/thmb/' + image.filename))  }}" data-alt-image="{{ url_for('static', filename=('img/workinprogress/' + image.filename)) }}">
   {% endfor %}
 </div>
 {% endblock %}
