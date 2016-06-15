@@ -1,6 +1,8 @@
 import os
 from flask import render_template
 from nemesis import app
+from models import Image
+import random
 
 @app.route('/')
 def home():
@@ -8,12 +10,25 @@ def home():
 
 @app.route('/works/')
 def works():
-    thumbnails = get_images()
-    print(thumbnails)
-    return render_template('gallery/gallery.html', thumbnails=thumbnails)
+#    images = random.shuffle(Image.query.all())[0:10]
+    images = Image.query.filter(Image.category == 'work').all()
+    return render_template('gallery/gallery.html', images=images)
 
+@app.route('/workinprogress/')
+def workinprogress():
+#    images = random.shuffle(Image.query.all())[0:10]
+    images = Image.query.filter(Image.category == 'workinprogress').all()
+    return render_template('gallery/workinprogress.html', images=images)
 
-def get_images():
-    files = os.listdir('static/img/thmb/')
-    images = [os.path.join('/static/img/thmb/', os.path.splitext(x)[:-1]) for x in files if os.path.splitext(x)[-1] in ('.jpg','.jpeg')]
-    return images
+@app.route('/about/')
+def about():
+    return render_template('gallery/about.html')
+
+@app.route('/shop/')
+def shop():
+    return render_template('gallery/shop.html')
+
+@app.route('/contact/')
+def contact():
+    return render_template('gallery/contact.html')
+

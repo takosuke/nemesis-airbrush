@@ -1,0 +1,5 @@
+---
+
+- name: add path app to pythonpath
+  lineinfile: dest=/home/{{ deploy_user }}/.zshrc_local line='export PYTHONPATH="${PYTHONPATH}:{{ webapps_dir }}/{{ app_name }}/html"
+  
