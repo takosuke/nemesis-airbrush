@@ -19,7 +19,7 @@
   - log_setup
   - nginx_setup
   - supervisord_setup
-  - virtualenv_setup
+  - py3_virtualenv_setup
   - pip_requirements
   - app_setup
   - cronjob_setup

@@ -5,7 +5,7 @@
               line=". /usr/local/bin/virtualenvwrapper.sh"
 
 - name: Make virtualenv
-  shell: . /usr/local/bin/virtualenvwrapper.sh && mkvirtualenv {{ app_name }}
+  shell: . /usr/local/bin/virtualenvwrapper.sh && mkvirtualenv --python=`which python3` {{ app_name }}
   args:
     executable: /bin/bash
 #    creates: "{{ venvabs }}"

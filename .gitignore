@@ -64,5 +64,7 @@ instance/
 # Project files
 project_files/
 html/static/bower_components/
+html/static/uploads/
 html/db/
+html/local_config.py
 log/
