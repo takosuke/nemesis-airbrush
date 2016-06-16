@@ -53,18 +53,11 @@ docs/_build/
 # OSX DS_Store files
 .DS_Store
 
-# Flask instance folders
-instance/
-
-#JSON
-*.json
-!package.json
-
 
 # Project files
 project_files/
 html/static/bower_components/
 html/static/uploads/
 html/db/
-html/local_config.py
 log/
+html/local_config.cfg

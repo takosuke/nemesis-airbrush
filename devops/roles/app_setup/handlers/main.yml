@@ -1,0 +1,9 @@
+- name: reread supervisor confs
+  become: yes
+  become_method: sudo
+  command: supervisorctl reread
+
+- name: update supervisor
+  become: yes
+  become_method: sudo
+  command: supervisorctl update
