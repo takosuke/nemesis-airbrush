@@ -12,6 +12,7 @@
   - app_root: "html"
   - static_root: "static"
   - wsgi_callable: application
+  - cronjob_script: "image_scripts.py"
 
 #  vars_prompt:
   roles:
@@ -23,3 +24,4 @@
   - pip_requirements
   - app_setup
   - cronjob_setup
+  - install_bower_dependencies

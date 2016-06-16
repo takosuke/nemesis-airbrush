@@ -1,0 +1,2 @@
+- name: install bower dependencies
+  bower: path={{ webapps_dir }}/{{ app_name }}/{{ app_root }}
