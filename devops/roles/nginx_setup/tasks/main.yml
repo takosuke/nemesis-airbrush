@@ -1,7 +1,7 @@
 ---
 
 - name: write nginx configuration
-  template: src=templates/{{ domain_name }} dest=/etc/nginx/sites-available/{{ domain_name }}
+  template: src=templates/nginx_site.conf dest=/etc/nginx/sites-available/{{ domain_name }}
   become: yes
   become_method: sudo
 

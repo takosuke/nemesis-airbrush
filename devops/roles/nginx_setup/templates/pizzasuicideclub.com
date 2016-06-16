@@ -16,10 +16,6 @@ server {
     expires 30d;
     }
 
-    location /media/ {
-    alias {{ webapps_dir }}/{{ app_name }}/{{ media_root }}/;
-    expires 30d;
-    }
     location / {
     include uwsgi_params;
     uwsgi_pass unix:/tmp/{{ app_name }}.sock;

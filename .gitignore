@@ -63,5 +63,6 @@ instance/
 
 # Project files
 project_files/
-/html/static/bower_components/
-/html/db
+html/static/bower_components/
+html/db/
+log/

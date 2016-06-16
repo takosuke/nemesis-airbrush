@@ -2,16 +2,15 @@
   hosts: webservers
   remote_user: takosuke
   vars:
-  - app_name: pizzasuicideclub.com
+  - app_name: nemesis-airbrush
   - deploy_user: takosuke
-  - domain_name: pizzasuicideclub.com
-  - repo_path: "takosuke/psc"
+  - domain_name: nemesis-airbrush.pizzasuicideclub.com
+  - repo_path: "takosuke/nemesis-airbrush"
   - repo_remote : origin
   - repo_version: master
   - webapps_dir: "/home/takosuke/public_html"
-  - app_root: "html/psc"
+  - app_root: "html"
   - static_root: "static"
-  - media_root: "html/psc/media/uploads"  
   - wsgi_callable: application
 
 #  vars_prompt:
@@ -23,3 +22,4 @@
   - virtualenv_setup
   - pip_requirements
   - app_setup
+  - cronjob_setup
