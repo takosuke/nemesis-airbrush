@@ -11,7 +11,7 @@
   - webapps_dir: "/home/takosuke/public_html"
   - app_root: "html"
   - static_root: "static"
-  - wsgi_callable: application
+  - wsgi_callable: app
   - cronjob_script: "image_scripts.py"
 
 #  vars_prompt:
