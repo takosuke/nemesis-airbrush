@@ -1,0 +1,2 @@
+- name: Update images cron job
+- cron: name="update images" minute="0" hour="*/2" job="workon {{ app_name }}; python3 {{ webapps_dir }}/{{ app_name }}/{{ app_root }}/image_scripts.py"
