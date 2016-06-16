@@ -4,3 +4,6 @@
   template: src=templates/supervisor.ini dest=/etc/supervisor/{{ app_name }}.ini
   become: true
   become_method: sudo
+
+- name: create app local config
+  template: src=templates/local_config.cfg dest={{ webapps_dir }}/{{ app_name}}/{{ app_root }}/local_config.cfg
