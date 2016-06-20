@@ -7,7 +7,7 @@ def random_full_size():
     return random.randint(700, 1100)
 
 def random_thmb_size():
-    return random.randint(150, 300)
+    return random.randint(250, 500)
 
 def import_images(category, inpath=app.config['SOURCE_IMAGES']):
     outpath = os.path.join(app.config['SERVE_IMAGE_PATH'], category)

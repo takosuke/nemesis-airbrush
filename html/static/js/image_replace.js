@@ -1,6 +1,23 @@
-$('.picture').click(function(){ 
-  var src = $(this).attr('src');
-  var tmp = $(this).data('alt-image');
-  $(this).attr('src', tmp);
-  $(this).data('alt-image', src);
+$(function() {
+
+  $('.picture').click(function(){ 
+
+    var active = $('.active-img').first();
+    if(active){
+      console.log(active.attr('src'));
+      var src = active.attr('src');
+      var tmp = active.data('alt-image');
+      active.attr('src', tmp);
+      active.data('alt-image', src);
+      active.removeClass('active-img');
+    }
+
+    selected = $(this);
+    src = selected.attr('src');
+    tmp = selected.data('alt-image');
+    selected.attr('src', tmp);
+    selected.data('alt-image', src);
+    selected.addClass('active-img');
+  });
+
 });
