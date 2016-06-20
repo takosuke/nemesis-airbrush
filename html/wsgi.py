@@ -1,4 +1,4 @@
-from app import app
+from nemesis import app
 
 if __name__ == "__main__":
     application.run()

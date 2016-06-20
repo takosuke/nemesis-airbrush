@@ -11,7 +11,6 @@ def random_thmb_size():
 
 def import_images(category, inpath=app.config['SOURCE_IMAGES']):
     outpath = os.path.join(app.config['SERVE_IMAGE_PATH'], category)
-    print(outpath)
     filelist = os.listdir(os.path.join(inpath, category))
     filelist = [x for x in filelist if os.path.splitext(x)[-1] == '.jpg' \
             or os.path.splitext(x)[-1] == '.jpeg'\
@@ -37,5 +36,5 @@ def import_images(category, inpath=app.config['SOURCE_IMAGES']):
         db.session.commit()
 
 if __name__ == '__main__':                        
-    import_images('work')
+    import_images('works')
     import_images('workinprogress')

@@ -11,7 +11,7 @@ def home():
 @app.route('/works/')
 def works():
 #    images = random.shuffle(Image.query.all())[0:10]
-    images = Image.query.filter(Image.category == 'work').all()
+    images = Image.query.filter(Image.category == 'works').all()
     return render_template('gallery/gallery.html', images=images)
 
 @app.route('/workinprogress/')
