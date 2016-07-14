@@ -19,19 +19,20 @@ def import_images(category, inpath=app.config['SOURCE_IMAGES']):
     for filename in filelist:
         fullsize = random_full_size(), random_full_size()
         thmbsize = random_thmb_size(), random_thmb_size()
-        try:
-            im = Image.open(os.path.join(inpath, category, filename))
-            im.thumbnail(fullsize)
-            im.save((os.path.join(outpath, filename)), 'JPEG')
-            im = Image.open(os.path.join(inpath, category, filename))
-            im.thumbnail(thmbsize)
-            im.save((os.path.join(outpath, 'thmb', filename)), 'JPEG')
+        if not Nemesis_Image.query.filter(Nemesis_Image.filename == filename).first():
+            try:
+                im = Image.open(os.path.join(inpath, category, filename))
+                im.thumbnail(fullsize)
+                im.save((os.path.join(outpath, filename)), 'JPEG')
+                im = Image.open(os.path.join(inpath, category, filename))
+                im.thumbnail(thmbsize)
+                im.save((os.path.join(outpath, 'thmb', filename)), 'JPEG')
 
-            new_image = Nemesis_Image(filename=filename, category=category)
-            db.session.add(new_image)
+                new_image = Nemesis_Image(filename=filename, category=category)
+                db.session.add(new_image)
 
-        except IOError:
-            print("Cannot create image for ", filename)
+            except IOError:
+                print("Cannot create image for ", filename)
 
         db.session.commit()
 
